@@ -34,7 +34,7 @@ flippermodelspecific_sportBotRemoteControl
 
 Inside the bundled JavaScript code, these opcodes are mapped to minified JavaScript functions. Those functions generate the Python code that is eventually sent to the hub.
 
-This README provides the current opcode to JavaScript function map. Find the JS function, and then look for the micropython code after each `functionBody` tag.
+This README provides the current opcode to JavaScript function map. 
 
 ## Hero Robot Map
 
@@ -78,108 +78,13 @@ This README provides the current opcode to JavaScript function map. Find the JS 
 | `dogBotStartMoving`       | `b8e`               | `dogBotStartMoving`       |
 | `dogBotStop`              | `L8e`               | `dogBotStop`              |
 
-## Full Opcode Map
-
-```js
-{
-  flippermodelspecific_bigBotCalibrate: {
-    jsFunction: "f8e",
-    pythonFunctionBody: "bigBotCalibrate"
-  },
-
-  flippermodelspecific_bigBotRemoteControl: {
-    jsFunction: "C8e",
-    pythonFunctionBody: 'bc("C", "A")'
-  },
-
-  flippermodelspecific_bigBotToggleAction: {
-    jsFunction: "v8e",
-    pythonFunctionBody: "bigBotToggleAction"
-  },
-
-  flippermodelspecific_custom: {
-    jsFunction: null,
-    pythonFunctionBody: null,
-    note: "Not present in extensionFunctions in the bundle"
-  },
-
-  flippermodelspecific_dogBotMoveForSeconds: {
-    jsFunction: "_8e",
-    pythonFunctionBody: "dogBotMoveForSeconds"
-  },
-
-  flippermodelspecific_dogBotSetLegsToPosition: {
-    jsFunction: "y8e",
-    pythonFunctionBody: "dogBotSetLegsToPosition"
-  },
-
-  flippermodelspecific_dogBotSetSpeed: {
-    jsFunction: "w8e",
-    pythonFunctionBody: "dogBotSetSpeed"
-  },
-
-  flippermodelspecific_dogBotStartMoving: {
-    jsFunction: "b8e",
-    pythonFunctionBody: "dogBotStartMoving"
-  },
-
-  flippermodelspecific_dogBotStop: {
-    jsFunction: "L8e",
-    pythonFunctionBody: "dogBotStop"
-  },
-
-  flippermodelspecific_dogBotWalkForSeconds: {
-    jsFunction: "g8e",
-    pythonFunctionBody: "dogBotWalkForSeconds"
-  },
-
-  flippermodelspecific_moveBotCalibrate: {
-    jsFunction: "E8e",
-    pythonFunctionBody: "moveBotCalibrate"
-  },
-
-  flippermodelspecific_moveBotRemoteControl: {
-    jsFunction: "M8e",
-    pythonFunctionBody: "moveBotRemoteControl"
-  },
-
-  flippermodelspecific_playBotCalibrate: {
-    jsFunction: "O8e",
-    pythonFunctionBody: "playBotCalibrate"
-  },
-
-  flippermodelspecific_playBotDrumBarsAtTempo: {
-    jsFunction: "A8e",
-    pythonFunctionBody: "playBotDrumBarsAtTempo"
-  },
-
-  flippermodelspecific_playBotRemoteControl: {
-    jsFunction: "P8e",
-    pythonFunctionBody: 'bc("A", "E")'
-  },
-
-  flippermodelspecific_sportBotRemoteControl: {
-    jsFunction: "S8e",
-    pythonFunctionBody: 'bc("B", "A")'
-  }
-}
-```
 
 ## How to Use This Map
 
-1. Search for the opcode in `LMRI.js`.
-2. Locate the corresponding entry in `extensionFunctions`.
-3. Follow the mapped JavaScript function.
-4. Inspect the generated Python string or helper function name.
-5. Reimplement the behavior in your target environment.
-
-Possible targets include:
-
-* Pure Scratch blocks
-* Pybricks
-* LRMI app python IDE
-* Custom firmware tools
-* Educational documentation
+1. Search for the function name in the table above.
+2. Search the corresponding JS function name in `LMRI.js` or `LMRI_beautified.js`
+3. Inspect the generated micropython code string after each `functionBody` tag.
+4. Reimplement the behavior in your target environment.
 
 ## Notes
 
